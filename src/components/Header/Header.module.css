@@ -1,0 +1,27 @@
+.header {
+  height: 60px;
+  background: #fff;
+  box-shadow: -2px 0px 8px 2px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  color: #000;
+  text-align: center;
+  font-family: Karla;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: flex;
+  gap: 24px;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_link {
+  text-decoration: none;
+}

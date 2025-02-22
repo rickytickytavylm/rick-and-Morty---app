@@ -1,0 +1,20 @@
+.logo {
+  background: url("../../assets/RickHeader.png") no-repeat center center;
+  width: 600px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.container{
+    padding-top: 26px
+
+
+}
+
+.cards{
+
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+
+}
