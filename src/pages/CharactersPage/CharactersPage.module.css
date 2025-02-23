@@ -5,16 +5,18 @@
   margin: 0 auto;
 }
 
-.container{
-    padding-top: 26px
-
-
+.container {
+  padding-top: 26px;
 }
 
-.cards{
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
-display: flex;
-gap: 20px;
-flex-wrap: wrap;
-
+.filters {
+  display: flex;
+  gap: 20px;
+  padding: 16px 0 33px 0;
 }

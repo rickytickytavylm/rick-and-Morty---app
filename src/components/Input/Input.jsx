@@ -1,9 +1,9 @@
 import s from "./Input.module.css";
 
-export const Input = ({onInput}) => {
+export const Input = ({onInput,placeholder}) => {
   return (
     <>
-      <input onInput={onInput} className={s.input} type="text" />
+      <input placeholder={placeholder} onInput={onInput} className={s.input} type="text" />
     </>
   );
 };

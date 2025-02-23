@@ -3,6 +3,7 @@ import { CharacterCard } from "../../components/CharacterCard/CharacterCard";
 import { Input } from "../../components/Input/Input";
 import s from "./CharactersPage.module.css";
 import { Link } from "react-router-dom";
+import { Selects } from "../../components/Selects/Selects";
 
 const API_URL = import.meta.env.VITE_API_KEY;
 
@@ -46,33 +47,34 @@ export const CharactersPage = () => {
     handleFilterChange();
   }, [searchValue, species, gender, status]);
 
+  const selects = [
+    { label: "Species", options: ["Human", "Alien", "Robot"] },
+    { label: "Gender", options: ["Male", "Female", "Unknown"] },
+    { label: "Status", options: ["Alive", "Dead", "Unknown"] },
+  ];
+
+  const selectChanges = (label, value) => {
+    if (label === "Species") {
+      setSpecies(value);
+    } else if (label === "Gender") {
+      setGender(value);
+    } else if (label === "Status") {
+      setStatus(value);
+    }
+  };
+
   return (
     <>
       <div className={s.container}>
         <div className={s.logo}></div>
-        <Input type="text" onInput={handleSearchChange} placeholder="Search" />
-
-      
-        <select onChange={(e) => setSpecies(e.target.value)}>
-          <option value="">Species</option>
-          <option value="Human">Human</option>
-          <option value="Alien">Alien</option>
-          <option value="Robot">Robot</option>
-        </select>
-
-        <select onChange={(e) => setGender(e.target.value)}>
-          <option value="">Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="unknown">Unknown</option>
-        </select>
-
-        <select onChange={(e) => setStatus(e.target.value)}>
-          <option value="">Status</option>
-          <option value="Alive">Alive</option>
-          <option value="Dead">Dead</option>
-          <option value="unknown">Unknown</option>
-        </select>
+        <div className={s.filters}>
+          <Input
+            type="text"
+            onInput={handleSearchChange}
+            placeholder="Search"
+          />
+          <Selects data={selects} onChange={selectChanges} />
+        </div>
       </div>
 
       <div className={s.cards}>
